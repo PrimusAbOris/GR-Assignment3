@@ -37,7 +37,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public void setName(String name) {

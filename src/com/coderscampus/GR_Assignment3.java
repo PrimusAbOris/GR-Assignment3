@@ -7,15 +7,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class GR_Assignment3 {
-	public static User[] userArray = new User[4];
-	
-	private static UserService userService = new UserService();
-	
+
+		
 	public static void main (String[] args) throws IOException {
 		textToArray("data.txt");
 		
 		Scanner scanner = null;
 		try {
+			private UserService userService = new UserService();
 			scanner = new Scanner(System.in);
 			
 			boolean validLogin = false;
@@ -27,7 +26,7 @@ public class GR_Assignment3 {
 				String password = scanner.nextLine();
 				
 				if (userService.checkLogin(username, password) == true) {
-					System.out.println("Welcome: " + validUser.getName()); // name, not username
+					System.out.println("Welcome: " + User.getName()); // name, not username
 					break;
 				} else {
 					System.out.println("Invalid login, please try again");
@@ -44,8 +43,8 @@ public class GR_Assignment3 {
 		
 	}
 
-	public static void textToArray(String filename) throws FileNotFoundException, IOException {
-		
+	public static User[] textToArray(String filename) throws FileNotFoundException, IOException {
+		User[] userArray = new User[4];
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(filename));
@@ -60,6 +59,6 @@ public class GR_Assignment3 {
 		}
 		
 		reader.close();
-
+		return userArray;
 	}
 }
