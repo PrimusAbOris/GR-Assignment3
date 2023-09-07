@@ -37,23 +37,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public static User[] textToArray(String filename) throws FileNotFoundException, IOException {
-		int size = 5; // array size; this can be adjusted for other programs if set separately
-		User[] users = new User[size];
-		for (int i = 0; i < size; i++) {
-			User newUser = new User("user" + (i+1), "password" + (i+1), "name" + (i+1));
-			// constructs a new User with three separate strings,
-			// then stores it in an array of User objects
-			users[i] = newUser;
-		}
-		return users;
 	}
 	
 }

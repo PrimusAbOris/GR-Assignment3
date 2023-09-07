@@ -10,11 +10,12 @@ public class GR_Assignment3 {
 
 		
 	public static void main (String[] args) throws IOException {
-		textToArray("data.txt");
+		// every PROJECT has one main method
+		User[] uArray = UserService.textToArray("data.txt");
 		
 		Scanner scanner = null;
 		try {
-			private UserService userService = new UserService();
+			UserService userService = new UserService();
 			scanner = new Scanner(System.in);
 			
 			boolean validLogin = false;
@@ -25,8 +26,8 @@ public class GR_Assignment3 {
 				System.out.println("Enter your password: ");
 				String password = scanner.nextLine();
 				
-				if (userService.checkLogin(username, password) == true) {
-					System.out.println("Welcome: " + User.getName()); // name, not username
+				if (userService.checkLogin(username, password, uArray) == true) {
+					System.out.println("Welcome: " + username); // name, not username
 					break;
 				} else {
 					System.out.println("Invalid login, please try again");
@@ -41,24 +42,5 @@ public class GR_Assignment3 {
 		
 		scanner.close();
 		
-	}
-
-	public static User[] textToArray(String filename) throws FileNotFoundException, IOException {
-		User[] userArray = new User[4];
-		BufferedReader reader = null;
-		try {
-			reader = new BufferedReader(new FileReader(filename));
-			String line = null;
-			int i = 0;
-			while ((line = reader.readLine()) != null) {
-				userArray[i] = new User(line.split(","));
-				System.out.println(userArray[i]);
-				i++;
-			}
-		} finally {
-		}
-		
-		reader.close();
-		return userArray;
 	}
 }
