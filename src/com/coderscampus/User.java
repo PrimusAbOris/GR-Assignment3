@@ -1,8 +1,5 @@
 package com.coderscampus;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 public class User {
 	/* User POJO */
 	// Variables
@@ -10,18 +7,9 @@ public class User {
 	private String password;
 	private String name;
 	
-	User (String[] uinfo) {
-		// Constructor (if given a string array)
-		this.username = uinfo[0];
-		this.password = uinfo[1];
-		this.name = uinfo[2];
-	}
-	
-	User (String username, String password, String name) {
-		// Constructor (if given three strings)
-		this.username = username;
-		this.password = password;
-		this.name = name;
+	public User() {
+		// Blank constructor
+		// Only constructor: object variables are set in other methods
 	}
 	
 	// Getters and setters
