@@ -15,7 +15,6 @@ public class GR_Assignment3 {
 
 		String line;
 		boolean validLogin = false;
-		int loginAttempts = 0;
 
 		try { // Splits the file into User objects
 
@@ -59,7 +58,7 @@ public class GR_Assignment3 {
 					}
 				}
 				// if it went through the list and didn't find it...
-				System.out.println("Invalid login, please try again");
+				if (i < 4) System.out.println("Invalid login, please try again");
 			}
 
 			// Now outside the for loop that uses i
