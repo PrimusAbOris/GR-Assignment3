@@ -55,7 +55,7 @@ public class GR_Assignment3 {
 							userArray[n].getPassword().equals(password)) {
 						System.out.println("Welcome, " + userArray[n].getName());
 						validLogin = true;
-						System.exit(0);; // Don't ask for another login if successful
+						System.exit(0); // Don't ask for another login if successful
 					}
 				}
 				// if it went through the list and didn't find it...
@@ -67,7 +67,6 @@ public class GR_Assignment3 {
 				System.out.println("Too many failed login attempts, you are now locked out.");
 			} // end of try block in main
 		} finally {
-
 		}
 
 		return;
@@ -89,7 +88,7 @@ public class GR_Assignment3 {
 		// Given a username, returns its password in plain text
 
 		for (int i = 0; i <= 5; i++) {
-			if (userArray[i].getUsername()..toLowerCase().equals(username.toLowerCase())) {
+			if (userArray[i].getUsername().toLowerCase().equals(username.toLowerCase())) {
 				return userArray[i].getPassword();
 			}
 		}
