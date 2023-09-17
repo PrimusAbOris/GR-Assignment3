@@ -78,7 +78,7 @@ public class GR_Assignment3 {
 		// Makes sure a username is in the array
 
 		for (int i = 0; i <= 5; i++) {
-			if (username.equals(userArray[i].getUsername())) {
+			if (username.toLowerCase().equals(userArray[i].getUsername().toLowerCase())) {
 				return true;
 			}
 		}
@@ -89,7 +89,7 @@ public class GR_Assignment3 {
 		// Given a username, returns its password in plain text
 
 		for (int i = 0; i <= 5; i++) {
-			if (userArray[i].getUsername().equals(username)) {
+			if (userArray[i].getUsername()..toLowerCase().equals(username.toLowerCase())) {
 				return userArray[i].getPassword();
 			}
 		}
