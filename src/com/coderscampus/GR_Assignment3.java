@@ -51,7 +51,8 @@ public class GR_Assignment3 {
 				String password = scanner.nextLine();
 
 				for (int n = 0; n < 4; n++) {
-					if (userArray[n].getUsername().equals(username) && userArray[n].getPassword().equals(password)) {
+					if (userArray[n].getUsername().toLowerCase().equals(username.toLowerCase()) &&
+							userArray[n].getPassword().equals(password)) {
 						System.out.println("Welcome, " + userArray[n].getName());
 						validLogin = true;
 						System.exit(0);; // Don't ask for another login if successful
